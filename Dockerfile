@@ -21,7 +21,6 @@ RUN \
     nano \
     net-tools \
     netcat \
-    docker \
     sudo && \
   echo "**** install code-server ****" && \
   if [ -z ${CODE_RELEASE+x} ]; then \
@@ -36,6 +35,7 @@ RUN \
     /app/code-server --strip-components=1 && \
   echo "**** clean up ****" && \
   apt-get clean && \
+  apt-get install -y docker && \
   rm -rf \
     /config/* \
     /tmp/* \
