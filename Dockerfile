@@ -21,6 +21,7 @@ RUN \
     nano \
     net-tools \
     netcat \
+    docker \
     sudo && \
   echo "**** install code-server ****" && \
   if [ -z ${CODE_RELEASE+x} ]; then \
