@@ -51,5 +51,7 @@ RUN \
 
 RUN usermod -aG docker abc
 
+USER abc
+
 # ports and volumes
 EXPOSE 8443
