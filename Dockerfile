@@ -35,7 +35,6 @@ RUN \
     /app/code-server --strip-components=1 && \
   echo "**** clean up ****" && \
   apt-get clean && \
-  apt-get install -y docker && \
   rm -rf \
     /config/* \
     /tmp/* \
@@ -44,6 +43,11 @@ RUN \
 
 # add local files
 COPY /root /
+
+# Install the Docker client inside the container
+RUN \
+  curl -fsSL https://get.docker.com -o get-docker.sh && \
+  sh get-docker.sh
 
 # ports and volumes
 EXPOSE 8443
