@@ -49,5 +49,7 @@ RUN \
   curl -fsSL https://get.docker.com -o get-docker.sh && \
   sh get-docker.sh
 
+RUN usermod -aG docker abc
+
 # ports and volumes
 EXPOSE 8443
